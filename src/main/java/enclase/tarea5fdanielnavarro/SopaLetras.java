@@ -74,12 +74,15 @@ public class SopaLetras {
             palabraChar[i] = palabra.charAt(i);
         }
         int contadorColumna = columna;
+        if(columna+palabra.length()>=sopaLetras[fila].length){
+            System.out.println("no entra en rango");
+        }else{
         for (int j = 0; j < palabraChar.length; j++) {            
             if (contadorColumna < sopaLetras[fila].length) {
                 sopaLetras[fila][contadorColumna++] = palabraChar[j];
             }
         }
-
+        }
     }
     public void colocarPalabraHorizontalInvertida(String palabra, int fila, int columna) {
         char[] palabraChar = new char[palabra.length()];
@@ -87,6 +90,7 @@ public class SopaLetras {
             palabraChar[i] = palabra.charAt(i);
         }
         int contadorColumna = columna;
+        
         for (int i = 0; i < palabraChar.length; i++) {            
             if (contadorColumna >=0 ) {
                 sopaLetras[fila][contadorColumna--] = palabraChar[i];
